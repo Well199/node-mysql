@@ -11,3 +11,5 @@ connection.connect((error) => {
     if(error) throw error;
     console.log(`Database connect on ${process.env.MYSQL_HOST}`)
 })
+
+module.exports = connection
