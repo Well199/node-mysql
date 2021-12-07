@@ -11,6 +11,15 @@ const State = {
         })
     },
 
+    findById: (id) => {
+        return new Promise((resolve, reject) => {
+            db.query('SELECT * FROM states WHERE id = ? ',[id], (error, results) => {
+                if(error) {reject(error); return;}
+                resolve(results[0])
+            })
+        })
+    },
+
 }
 
 module.exports = State

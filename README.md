@@ -4,4 +4,4 @@
 #### Linguagens: Javascript e SQL
 --------------------------------------
 #### Onde Parei:
-#### Criando middleware de auth
+#### Fazendo o login

@@ -22,7 +22,7 @@ const Auth = {
             return
         }
 
-        const user = await User.findOne(token)
+        const user = await User.findToken(token)
 
         if(!user){
             res.json({message: "usuario não encontrado"})
