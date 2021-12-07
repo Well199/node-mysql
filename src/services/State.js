@@ -1,6 +1,6 @@
 const db = require('../db')
 
-const StateService = {
+const State = {
 
     find: () => {
         return new Promise((resolve, reject) => {
@@ -13,4 +13,4 @@ const StateService = {
 
 }
 
-module.exports = StateService
+module.exports = State

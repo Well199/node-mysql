@@ -1,12 +1,12 @@
-const StateService = require('../services/stateService')
+const State = require('../services/State')
 
 const UserController = {
 
     async getStates (req, res){
 
-        let states = await StateService.find()
+        let states = await State.find()
 
-        res.json({result: states})
+        res.json({states})
     },
 
     async info (req, res){

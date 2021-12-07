@@ -3,7 +3,7 @@ const express = require('express')
 const cors = require('cors')
 const fileUpload = require('express-fileupload')
 
-const apiRoutes = require('./views/routes')
+const apiRoutes = require('./routes/routes')
 
 const server = express()
 
