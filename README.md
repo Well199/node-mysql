@@ -4,4 +4,4 @@
 #### Linguagens: Javascript e SQL
 --------------------------------------
 #### Onde Parei:
-#### Criando o projeto
+#### Criando os métodos nas actions
