@@ -20,6 +20,15 @@ const User = {
         })
     },
 
+    setToken: (token, id) => {
+        return new Promise((resolve, reject) => {
+            db.query(`UPDATE users SET token = ? WHERE id = ?`, [token, id], (error, resuts) => {
+                if(error){ reject(error); return; }
+                resolve(resuts[0])
+            })
+        })
+    },
+
     save: (name, email, password, token, state_id) => {
         return new Promise((resolve, reject) => {
             db.query(`INSERT INTO users (name, email, passwordHash, token, state_id) VALUES (?,?,?,?,?)`,

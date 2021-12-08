@@ -4,4 +4,4 @@
 #### Linguagens: Javascript e SQL
 --------------------------------------
 #### Onde Parei:
-#### Fazendo o login
+#### Pegando informações do usuário

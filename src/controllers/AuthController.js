@@ -6,8 +6,34 @@ const State = require('../services/State')
 const AuthController = {
 
     async signin (req, res){
+        const errors = validationResult(req)
+        if(!errors.isEmpty()){
+            res.json({error: errors.mapped()})
+            return
+        }
+        const data = matchedData(req)
 
-        res.json({})
+        const user = await User.findEmail(data.email)
+        if(!user){
+            res.json({error: 'Email /ou senha inválidos'})
+            return
+        }
+
+        let password = data.password.toString()
+
+        // validando a senha
+        const match = await bcrypt.compare(password, user.passwordHash)
+        if(!match){
+            res.json({error: 'Email /ou senha inválidos'})
+            return
+        }
+
+        const payload = (Date.now() + Math.random()).toString()
+        const token = await bcrypt.hash(payload, 10)
+
+        await User.setToken(token, user.id)
+
+        res.json({token: token})
     },
 
     async signup (req, res){
